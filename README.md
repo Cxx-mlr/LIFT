@@ -1,5 +1,7 @@
 # LIFT
 
+- msvc std:c++latest
+- clang , gcc
 ```cpp
 #include <iostream>
 #include <utility>
