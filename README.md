@@ -1,7 +1,5 @@
 # LIFT
 
-- msvc std:c++latest
-- clang , gcc
 ```cpp
 #include <iostream>
 #include <utility>
@@ -40,3 +38,7 @@ int main() {
     function(sum(3, 6)); // hello `c_out` 9
 }
 ```
+
+- msvc -> std:c++latest
+- clang
+- gcc
