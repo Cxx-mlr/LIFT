@@ -21,13 +21,20 @@ struct Wrapper
 
 #define LIFT(X) Wrapper{X}
 
-void c_out() { std::cout << " hello `c_out` "; }
+void c_out(int r) { std::cout << " hello `c_out` " << r << ' '; }
+
+void sum(int x, int y) {
+    return x + y;
+}
 
 int main() {
-    auto function = LIFT([] { std::cout << " hello `lambda` "; });
-    function();
+    auto lambda = LIFT([] { std::cout << " hello `lambda` "; });
+    lambda(); // hello `lambda`
 
-    auto copy = LIFT(function);
-    copy();
+    auto copy = LIFT(lambda);
+    copy(); // hello `lambda`
+    
+    auto function = LIFT(c_out);
+    function(sum(3, 6)); // hello `c_out` 9
 }
 ```
