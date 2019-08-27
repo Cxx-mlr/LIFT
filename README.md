@@ -5,8 +5,8 @@
 #include <utility>
 
 #define LIFT(X) [](auto&&... args)\
-    noexcept(noexcept(overload(std::forward <decltype(args)>(args)...)))\
-        -> decltype(overload(std::forward <decltype(args)>(args)...)) { return overload(std::forward <decltype(args)>(args)...); }
+    noexcept(noexcept(X(std::forward <decltype(args)>(args)...)))\
+        -> decltype(X(std::forward <decltype(args)>(args)...)) { return X(std::forward <decltype(args)>(args)...); }
 
 void overload(int) {
     puts("int");
