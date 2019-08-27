@@ -23,7 +23,7 @@ struct Wrapper
 
 void c_out(int r) { std::cout << " hello `c_out` " << r << ' '; }
 
-void sum(int x, int y) {
+int sum(int x, int y) {
     return x + y;
 }
 
